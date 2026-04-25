@@ -1,4 +1,4 @@
-#include "main.h"
+/*#include "main.h"
 #include "main_control.h"
 #include "bldc.h"
 #include "encoder.h"
@@ -63,7 +63,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 //    // phase_current.ready = 1;
 //}
 
-/*
+//111111111111111111
 int main(void)
 {
     HAL_Init();

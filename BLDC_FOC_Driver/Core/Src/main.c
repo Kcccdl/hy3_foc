@@ -30,6 +30,22 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+#include "main.h"
+#include "main_control.h"
+#include "bldc.h"
+#include "encoder.h"
+#include "can_comm.h"
+#include "rs422_comm.h"
+#include "i2c_dev.h"
+#include "tim.h"
+#include "spi.h"
+#include "can.h"
+#include "usart.h"
+#include "i2c.h"
+#include "adc.h"
+
+extern BLDC_Motor_t motor;
+extern SystemState_t sys_state;
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -56,6 +72,30 @@
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+    static uint32_t tick_count = 0;
+    
+    if(htim->Instance == TIM6)
+    {
+        tick_count++;
+        System_Update();
+        
+        if(tick_count % 500 == 0)
+        {
+            System_Heartbeat();
+        }
+    }
+    
+    if(htim->Instance == TIM2 || htim->Instance == TIM3 || htim->Instance == TIM4)
+    {
+        if(motor.mode == COMMUTATION_6STEP)
+        {
+            BLDC_ReadHallSensors(&motor);
+            BLDC_SixStep_Commutation(&motor);
+        }
+    }
+}
 
 /* USER CODE END PFP */
 

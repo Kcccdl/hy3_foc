@@ -32,4 +32,7 @@ bldc_foc_driver/main.o: ..\Core\Src\main.c ..\Core\Inc\main.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h \
   ..\Core\Inc\adc.h ..\Core\Inc\can.h ..\Core\Inc\dma.h \
   ..\Core\Inc\i2c.h ..\Core\Inc\spi.h ..\Core\Inc\tim.h \
-  ..\Core\Inc\usart.h ..\Core\Inc\gpio.h
+  ..\Core\Inc\usart.h ..\Core\Inc\gpio.h ..\..\User\Inc\main_control.h \
+  ..\..\User\Inc\bldc.h ..\..\User\Inc\pid.h ..\..\User\Inc\foc.h \
+  ..\..\User\Inc\encoder.h ..\..\User\Inc\can_comm.h \
+  ..\..\User\Inc\rs422_comm.h ..\..\User\Inc\i2c_dev.h
