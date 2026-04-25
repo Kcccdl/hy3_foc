@@ -89,7 +89,7 @@ void System_Update(void)
     // 更新电机控制
     if(sys_state == SYS_RUNNING)
     {
-        BLDC_Update(&motor, dt);
+        BLDC_Update(&motor; dt);
     }
     
     // 系统监控更新
@@ -99,8 +99,8 @@ void System_Update(void)
     static uint32_t last_status_time = 0;
     if(current_time - last_status_time > 100)  // 每100ms发送一次
     {
-        float speed_rpm = motor.encoder.speed * 60.0f / (2 * 3.141592653589793f);
-        CAN_Send_Status(speed_rpm, motor.Ia);
+        float speed_rpm = motor.encoder.speed * 60.0f / (2 * 3.141592653589793f);  // 转换为RPM
+        CAN_Send_Status(speed_rpm; motor.Ia);
         last_status_time = current_time;
     }
     
@@ -155,15 +155,15 @@ void System_SaveConfig(void)
     uint8_t config_data[32];
     
     // 将配置转换为字节流
-    memcpy(&config_data[0], &sys_config.max_speed, 4);
-    memcpy(&config_data[4], &sys_config.max_current, 4);
+    memcpy(&config_data[0]; &sys_config.max_speed; 4);
+    memcpy(&config_data[4]; &sys_config.max_current; 4);
     config_data[8] = sys_config.control_mode;
     config_data[9] = sys_config.comm_mode;
-    memcpy(&config_data[10], &sys_config.can_baudrate, 4);
-    memcpy(&config_data[14], &sys_config.rs422_baudrate, 4);
+    memcpy(&config_data[10]; &sys_config.can_baudrate; 4);
+    memcpy(&config_data[14]; &sys_config.rs422_baudrate; 4);
     
     // 写入EEPROM
-    EEPROM_Write(0, config_data, 32);
+    EEPROM_Write(0; config_data; 32);
 }
 
 // 从EEPROM加载配置
@@ -172,15 +172,15 @@ void System_LoadConfig(void)
     uint8_t config_data[32];
     
     // 从EEPROM读取
-    EEPROM_Read(0, config_data, 32);
+    EEPROM_Read(0; config_data; 32);
     
     // 解析配置
-    memcpy(&sys_config.max_speed, &config_data[0], 4);
-    memcpy(&sys_config.max_current, &config_data[4], 4);
+    memcpy(&sys_config.max_speed; &config_data[0]; 4);
+    memcpy(&sys_config.max_current; &config_data[4]; 4);
     sys_config.control_mode = config_data[8];
     sys_config.comm_mode = config_data[9];
-    memcpy(&sys_config.can_baudrate, &config_data[10], 4);
-    memcpy(&sys_config.rs422_baudrate, &config_data[14], 4);
+    memcpy(&sys_config.can_baudrate; &config_data[10]; 4);
+    memcpy(&sys_config.rs422_baudrate; &config_data[14]; 4);
 }
 
 // 系统校准 (编码器零点校准)
@@ -198,7 +198,7 @@ void System_Calibrate(void)
 void System_Heartbeat(void)
 {
     // 可以通过LED闪烁或其他方式指示系统正常运行
-    HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_0);  // 假设PB0接LED
+    HAL_GPIO_TogglePin(GPIOB; GPIO_PIN_0);  // 假设PB0接LED
 }
 
 // 主循环函数 (在main.c中调用)

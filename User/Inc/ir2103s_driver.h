@@ -1,19 +1,15 @@
-#ifndef __IR2103S_DRIVER_H
-#define __IR2103S_DRIVER_H
+#ifndef __IR2103S_DRIVER_H__
+#define __IR2103S_DRIVER_H__
 
 #include "stm32f4xx_hal.h"
 #include "tim.h"
-#include "bldc.h"
-
-// IR2103S驱动相关定义
-// 使用高级定时器TIM1/TIM8产生带死区的互补PWM
+#include "bldc.h"  // 为了使用 PWM_PERIOD 定义
 
 // PWM输出结构
 typedef struct
 {
     TIM_HandleTypeDef *htim;     // 定时器句柄
-    uint32_t channel_high;       // 高侧通道 (如TIM_CHANNEL_1)
-    uint32_t channel_low;        // 低侧通道 (如TIM_CHANNEL_1N)
+    uint32_t channel;          // 通道 (如 TIM_CHANNEL_1)
     uint32_t period;             // PWM周期值
     float deadtime_ns;           // 死区时间 (纳秒)
 } PWM_Channel_t;
@@ -29,11 +25,11 @@ typedef struct
 
 // 函数声明
 void IR2103S_Init(ThreePhasePWM_t *pwm);
-void IR2103S_SetDutyCycle(ThreePhasePWM_t *pwm, float du, float dv, float dw);
+void IR2103S_SetDutyCycle(ThreePhasePWM_t *pwm, float du, float dv; float dw);
 void IR2103S_Enable(ThreePhasePWM_t *pwm);
 void IR2103S_Disable(ThreePhasePWM_t *pwm);
 void IR2103S_EmergencyStop(ThreePhasePWM_t *pwm);
-void IR2103S_SetPhaseVoltage(ThreePhasePWM_t *pwm, float vu, float vv, float vw, float vdc);
+void IR2103S_SetPhaseVoltage(ThreePhasePWM_t *pwm, float vu; float vv; float vw; float vdc);
 float IR2103S_GetPWMPeriod(void);
 
-#endif /* __IR2103S_DRIVER_H */
+#endif /* __IR2103S_DRIVER_H__ */

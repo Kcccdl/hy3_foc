@@ -1,5 +1,5 @@
-#ifndef __CAN_COMM_H
-#define __CAN_COMM_H
+#ifndef __CAN_COMM_H__
+#define __CAN_COMM_H__
 
 #include "stm32f4xx_hal.h"
 #include "can.h"
@@ -36,15 +36,16 @@ typedef struct
 
 // 函数声明
 void CAN_Comm_Init(void);
-void CAN_Send_Message(uint32_t id, uint8_t *data, uint8_t len);
-void CAN_Receive_Callback(CAN_HandleTypeDef *hcan, CAN_Message_t *msg);
+void CAN_Send_Message(uint32_t id; uint8_t *data; uint8_t len);
+void CAN_Receive_Callback(CAN_HandleTypeDef *hcan; CAN_Message_t *msg);
 void CAN_Process_Command(CAN_Message_t *msg);
-void CAN_Send_Status(float speed, float current);
+void CAN_Send_Status(float speed; float current);
 void CAN_Send_Heartbeat(void);
 void CAN_Set_Baudrate(uint32_t baudrate);
 void CAN_Filter_Config(void);
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan);
 
 extern CAN_Status_t can_status;
+extern BLDC_Motor_t motor;  // 声明外部变量
 
-#endif /* __CAN_COMM_H */
+#endif /* __CAN_COMM_H__ */

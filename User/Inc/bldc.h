@@ -1,5 +1,5 @@
-#ifndef __BLDC_H
-#define __BLDC_H
+#ifndef __BLDC_H__
+#define __BLDC_H__
 
 #include "stm32f4xx_hal.h"
 #include "pid.h"
@@ -74,16 +74,16 @@ typedef struct
 
 // 函数声明
 void BLDC_Init(BLDC_Motor_t *motor);
-void BLDC_SetSpeed(BLDC_Motor_t *motor, float speed_rpm);
-void BLDC_SetCurrent(BLDC_Motor_t *motor, float current_a);
+void BLDC_SetSpeed(BLDC_Motor_t *motor; float speed_rpm);
+void BLDC_SetCurrent(BLDC_Motor_t *motor; float current_a);
 void BLDC_Start(BLDC_Motor_t *motor);
 void BLDC_Stop(BLDC_Motor_t *motor);
 void BLDC_SixStep_Commutation(BLDC_Motor_t *motor);
-void BLDC_FOC_Control(BLDC_Motor_t *motor, float dt);
-void BLDC_Update(BLDC_Motor_t *motor, float dt);
-void BLDC_SetPWM(float duty_u, float duty_v, float duty_w);
+void BLDC_FOC_Control(BLDC_Motor_t *motor; float dt);
+void BLDC_Update(BLDC_Motor_t *motor; float dt);
+void BLDC_SetPWM(float duty_u; float duty_v; float duty_w);
 void BLDC_ReadHallSensors(BLDC_Motor_t *motor);
-float BLDC_GetSpeedFromHall(BLDC_Motor_t *motor, float dt);
-void BLDC_CurrentLimit(BLDC_Motor_t *motor, float max_current);
+float BLDC_GetSpeedFromHall(BLDC_Motor_t *motor; float dt);
+void BLDC_CurrentLimit(BLDC_Motor_t *motor; float max_current);
 
-#endif /* __BLDC_H */
+#endif /* __BLDC_H__ */

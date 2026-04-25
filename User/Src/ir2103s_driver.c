@@ -5,22 +5,19 @@ void IR2103S_Init(ThreePhasePWM_t *pwm)
 {
     // 初始化U相
     pwm->phase_u.htim = &htim1;          // 使用TIM1
-    pwm->phase_u.channel_high = TIM_CHANNEL_1;
-    pwm->phase_u.channel_low = TIM_CHANNEL_1N;  // 互补通道
+    pwm->phase_u.channel = TIM_CHANNEL_1;   // 通道1
     pwm->phase_u.period = PWM_PERIOD;    // 与CubeMX配置一致
     pwm->phase_u.deadtime_ns = 200.0f;  // 200ns死区
     
     // 初始化V相
     pwm->phase_v.htim = &htim1;
-    pwm->phase_v.channel_high = TIM_CHANNEL_2;
-    pwm->phase_v.channel_low = TIM_CHANNEL_2N;
+    pwm->phase_v.channel = TIM_CHANNEL_2;
     pwm->phase_v.period = PWM_PERIOD;
     pwm->phase_v.deadtime_ns = 200.0f;
     
     // 初始化W相
     pwm->phase_w.htim = &htim1;
-    pwm->phase_w.channel_high = TIM_CHANNEL_3;
-    pwm->phase_w.channel_low = TIM_CHANNEL_3N;
+    pwm->phase_w.channel = TIM_CHANNEL_3;
     pwm->phase_w.period = PWM_PERIOD;
     pwm->phase_w.deadtime_ns = 200.0f;
     
@@ -32,9 +29,9 @@ void IR2103S_Init(ThreePhasePWM_t *pwm)
 }
 
 // 设置三相PWM占空比 (0.0 - 1.0)
-void IR2103S_SetDutyCycle(ThreePhasePWM_t *pwm, float du, float dv, float dw)
+void IR2103S_SetDutyCycle(ThreePhasePWM_t *pwm, float du; float dv; float dw)
 {
-    uint32_t compare_u, compare_v, compare_w;
+    uint32_t compare_u, compare_v; compare_w;
     
     // 限制占空比范围
     if(du > 1.0f) du = 1.0f;
@@ -49,24 +46,24 @@ void IR2103S_SetDutyCycle(ThreePhasePWM_t *pwm, float du, float dv, float dw)
     compare_v = (uint32_t)(dv * pwm->phase_v.period);
     compare_w = (uint32_t)(dw * pwm->phase_w.period);
     
-    // 设置PWM比较值
-    __HAL_TIM_SET_COMPARE(pwm->phase_u.htim, pwm->phase_u.channel_high, compare_u);
-    __HAL_TIM_SET_COMPARE(pwm->phase_v.htim, pwm->phase_v.channel_high, compare_v);
-    __HAL_TIM_SET_COMPARE(pwm->phase_w.htim, pwm->phase_w.channel_high, compare_w);
+    // 设置PWM比较值（高侧）
+    __HAL_TIM_SET_COMPARE(pwm->phase_u.htim, pwm->phase_u.channel, compare_u);
+    __HAL_TIM_SET_COMPARE(pwm->phase_v.htim, pwm->phase_v.channel, compare_v);
+    __HAL_TIM_SET_COMPARE(pwm->phase_w.htim, pwm->phase_w.channel, compare_w);
 }
 
 // 使能PWM输出
 void IR2103S_Enable(ThreePhasePWM_t *pwm)
 {
-    // 启动PWM输出 (高侧和低侧)
-    HAL_TIM_PWM_Start(pwm->phase_u.htim, pwm->phase_u.channel_high);
-    HAL_TIMEx_PWMN_Start(pwm->phase_u.htim, pwm->phase_u.channel_low);
+    // 启动PWM输出（高侧和低侧）
+    HAL_TIM_PWM_Start(pwm->phase_u.htim, pwm->phase_u.channel);
+    HAL_TIMEx_PWMN_Start(pwm->phase_u.htim, pwm->phase_u.channel);  // 互补通道
     
-    HAL_TIM_PWM_Start(pwm->phase_v.htim, pwm->phase_v.channel_high);
-    HAL_TIMEx_PWMN_Start(pwm->phase_v.htim, pwm->phase_v.channel_low);
+    HAL_TIM_PWM_Start(pwm->phase_v.htim, pwm->phase_v.channel);
+    HAL_TIMEx_PWMN_Start(pwm->phase_v.htim, pwm->phase_v.channel);
     
-    HAL_TIM_PWM_Start(pwm->phase_w.htim, pwm->phase_w.channel_high);
-    HAL_TIMEx_PWMN_Start(pwm->phase_w.htim, pwm->phase_w.channel_low);
+    HAL_TIM_PWM_Start(pwm->phase_w.htim, pwm->phase_w.channel);
+    HAL_TIMEx_PWMN_Start(pwm->phase_w.htim, pwm->phase_w.channel);
     
     pwm->enabled = 1;
 }
@@ -75,14 +72,14 @@ void IR2103S_Enable(ThreePhasePWM_t *pwm)
 void IR2103S_Disable(ThreePhasePWM_t *pwm)
 {
     // 停止PWM输出
-    HAL_TIM_PWM_Stop(pwm->phase_u.htim, pwm->phase_u.channel_high);
-    HAL_TIMEx_PWMN_Stop(pwm->phase_u.htim, pwm->phase_u.channel_low);
+    HAL_TIM_PWM_Stop(pwm->phase_u.htim, pwm->phase_u.channel);
+    HAL_TIMEx_PWMN_Stop(pwm->phase_u.htim, pwm->phase_u.channel);
     
-    HAL_TIM_PWM_Stop(pwm->phase_v.htim, pwm->phase_v.channel_high);
-    HAL_TIMEx_PWMN_Stop(pwm->phase_v.htim, pwm->phase_v.channel_low);
+    HAL_TIM_PWM_Stop(pwm->phase_v.htim, pwm->phase_v.channel);
+    HAL_TIMEx_PWMN_Stop(pwm->phase_v.htim, pwm->phase_v.channel);
     
-    HAL_TIM_PWM_Stop(pwm->phase_w.htim, pwm->phase_w.channel_high);
-    HAL_TIMEx_PWMN_Stop(pwm->phase_w.htim, pwm->phase_w.channel_low);
+    HAL_TIM_PWM_Stop(pwm->phase_w.htim, pwm->phase_w.channel);
+    HAL_TIMEx_PWMN_Stop(pwm->phase_w.htim, pwm->phase_w.channel);
     
     pwm->enabled = 0;
 }
@@ -98,11 +95,9 @@ void IR2103S_EmergencyStop(ThreePhasePWM_t *pwm)
 }
 
 // 根据电压值设置PWM (用于SVPWM)
-// vu, vv, vw: 相电压 (-vdc/2 到 +vdc/2)
-// vdc: 直流母线电压
-void IR2103S_SetPhaseVoltage(ThreePhasePWM_t *pwm, float vu, float vv, float vw, float vdc)
+void IR2103S_SetPhaseVoltage(ThreePhasePWM_t *pwm, float vu; float vv; float vw; float vdc)
 {
-    float du, dv, dw;
+    float du, dv; dw;
     
     // 将电压转换为占空比 (加入中点偏移，使电压全为正)
     // 实际使用中，SVPWM函数会直接输出占空比
@@ -119,7 +114,7 @@ void IR2103S_SetPhaseVoltage(ThreePhasePWM_t *pwm, float vu, float vv, float vw,
     if(dw < 0.0f) dw = 0.0f;
     
     // 设置PWM
-    IR2103S_SetDutyCycle(pwm, du, dv, dw);
+    IR2103S_SetDutyCycle(pwm, du; dv, dw);
 }
 
 // 获取PWM周期值

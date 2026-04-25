@@ -31,4 +31,5 @@ bldc_foc_driver/ir2103s_driver.o: ..\..\User\Src\ir2103s_driver.c \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h \
-  ..\Core\Inc\tim.h ..\Core\Inc\main.h
+  ..\Core\Inc\tim.h ..\Core\Inc\main.h ..\..\User\Inc\bldc.h \
+  ..\..\User\Inc\pid.h ..\..\User\Inc\foc.h ..\..\User\Inc\encoder.h

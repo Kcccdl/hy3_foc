@@ -27,145 +27,44 @@ Project File Date:  04/25/2026
 <h2>Output:</h2>
 *** Using Compiler 'V6.23', folder: 'D:\keil_uvision\ARM\ARMCLANG\Bin'
 Build target 'BLDC_FOC_Driver'
-../../User/Src/can_comm.c(1): warning: In file included from...
-../../User/Inc\can_comm.h(1): warning: '__CAN_COMM_H' is used as a header guard here, followed by #define of a different macro [-Wheader-guard]
-    1 | #ifndef __CAN_COMM_H
-      |         ^~~~~~~~~~~~
-../../User/Inc\can_comm.h(2): note: '__CAN_COMM_H_' is defined here; did you mean '__CAN_COMM_H'?
-    2 | #define __CAN_COMM_H_
-      |         ^~~~~~~~~~~~~
-      |         __CAN_COMM_H
-../../User/Src/can_comm.c(92): error: use of undeclared identifier 'motor'; did you mean 'goto'?
-   92 |                 BLDC_SetSpeed(&motor, value);
-      |                                ^~~~~
-      |                                goto
-../../User/Src/can_comm.c(92): error: expected expression
-../../User/Src/can_comm.c(101): error: use of undeclared identifier 'motor'; did you mean 'goto'?
-  101 |                 BLDC_SetCurrent(&motor, value);
-      |                                  ^~~~~
-      |                                  goto
-../../User/Src/can_comm.c(101): error: expected expression
-../../User/Src/can_comm.c(117): error: use of undeclared identifier 'motor'
-  117 |                         motor.speed_pid.Kp = param_value;
-      |                         ^
-../../User/Src/can_comm.c(120): error: use of undeclared identifier 'motor'
-  120 |                         motor.speed_pid.Ki = param_value;
-      |                         ^
-../../User/Src/can_comm.c(123): error: use of undeclared identifier 'motor'
-  123 |                         motor.speed_pid.Kd = param_value;
-      |                         ^
-../../User/Src/can_comm.c(156): warning: unused parameter 'baudrate' [-Wunused-parameter]
-  156 | void CAN_Set_Baudrate(uint32_t baudrate)
+compiling i2c_dev.c...
+../../User/Src/current_sense.c(19): warning: unused parameter 'current' [-Wunused-parameter]
+   19 | void CurrentSense_Start(PhaseCurrent_t *current)
+      |                                         ^
+../../User/Src/current_sense.c(104): warning: unused variable 'adc_value' [-Wunused-variable]
+  104 |     uint16_t adc_value;
+      |              ^~~~~~~~~
+../../User/Src/current_sense.c(101): warning: unused parameter 'current' [-Wunused-parameter]
+  101 | void CurrentSense_CalibrateOffset(PhaseCurrent_t *current)
+      |                                                   ^
+../../User/Src/current_sense.c(126): warning: unused parameter 'hadc' [-Wunused-parameter]
+  126 | void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
+      |                                                  ^
+4 warnings generated.
+compiling current_sense.c...
+../../User/Src/can_comm.c(159): warning: unused parameter 'baudrate' [-Wunused-parameter]
+  159 | void CAN_Set_Baudrate(uint32_t baudrate)
       |                                ^
-2 warnings and 7 errors generated.
+1 warning generated.
 compiling can_comm.c...
-../../User/Src/ir2103s_driver.c(1): warning: In file included from...
-../../User/Inc\ir2103s_driver.h(1): warning: '__IR2103S_DRIVER_H' is used as a header guard here, followed by #define of a different macro [-Wheader-guard]
-    1 | #ifndef __IR2103S_DRIVER_H
-      |         ^~~~~~~~~~~~~~~~~~
-../../User/Inc\ir2103s_driver.h(2): note: '__IR2103S_DRIVER_H_' is defined here; did you mean '__IR2103S_DRIVER_H'?
-    2 | #define __IR2103S_DRIVER_H_
-      |         ^~~~~~~~~~~~~~~~~~~
-      |         __IR2103S_DRIVER_H
 ../../User/Src/ir2103s_driver.c(9): error: use of undeclared identifier 'TIM_CHANNEL_1N'
     9 |     pwm->phase_u.channel_low = TIM_CHANNEL_1N;  // 互补通道
       |                                ^
-../../User/Src/ir2103s_driver.c(10): error: use of undeclared identifier 'PWM_PERIOD'
-   10 |     pwm->phase_u.period = PWM_PERIOD;    // 与CubeMX配置一致
-      |                           ^
 ../../User/Src/ir2103s_driver.c(16): error: use of undeclared identifier 'TIM_CHANNEL_2N'
    16 |     pwm->phase_v.channel_low = TIM_CHANNEL_2N;
       |                                ^
-../../User/Src/ir2103s_driver.c(17): error: use of undeclared identifier 'PWM_PERIOD'
-   17 |     pwm->phase_v.period = PWM_PERIOD;
-      |                           ^
 ../../User/Src/ir2103s_driver.c(23): error: use of undeclared identifier 'TIM_CHANNEL_3N'
    23 |     pwm->phase_w.channel_low = TIM_CHANNEL_3N;
       |                                ^
-../../User/Src/ir2103s_driver.c(24): error: use of undeclared identifier 'PWM_PERIOD'
-   24 |     pwm->phase_w.period = PWM_PERIOD;
-      |                           ^
-../../User/Src/ir2103s_driver.c(128): error: use of undeclared identifier 'PWM_PERIOD'
-  128 |     return (float)PWM_PERIOD;
-      |                   ^
-1 warning and 7 errors generated.
+3 errors generated.
 compiling ir2103s_driver.c...
-../../User/Src/i2c_dev.c(59): error: call to undeclared library function 'malloc' with type 'void *(unsigned int)'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
-   59 |     tx_buffer = (uint8_t*)malloc(len + 1);
-      |                           ^
-../../User/Src/i2c_dev.c(59): note: include the header <stdlib.h> or explicitly provide a declaration for 'malloc'
-../../User/Src/i2c_dev.c(68): error: call to undeclared library function 'free' with type 'void (void *)'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
-   68 |     free(tx_buffer);
-      |     ^
-../../User/Src/i2c_dev.c(68): note: include the header <stdlib.h> or explicitly provide a declaration for 'free'
-2 errors generated.
-compiling i2c_dev.c...
-../../User/Src/main_user.c(8): warning: In file included from...
-../../User/Inc\main_control.h(9): warning: In file included from...
-../../User/Inc\can_comm.h(1): warning: '__CAN_COMM_H' is used as a header guard here, followed by #define of a different macro [-Wheader-guard]
-    1 | #ifndef __CAN_COMM_H
-      |         ^~~~~~~~~~~~
-../../User/Inc\can_comm.h(2): note: '__CAN_COMM_H_' is defined here; did you mean '__CAN_COMM_H'?
-    2 | #define __CAN_COMM_H_
-      |         ^~~~~~~~~~~~~
-      |         __CAN_COMM_H
-../../User/Src/main_user.c(8): warning: In file included from...
-../../User/Inc\main_control.h(1): warning: '__MAIN_CONTROL_H' is used as a header guard here, followed by #define of a different macro [-Wheader-guard]
-    1 | #ifndef __MAIN_CONTROL_H
-      |         ^~~~~~~~~~~~~~~~
-../../User/Inc\main_control.h(2): note: '__MAIN_CONTROL_H_' is defined here; did you mean '__MAIN_CONTROL_H'?
-    2 | #define __MAIN_CONTROL_H_
-      |         ^~~~~~~~~~~~~~~~~
-      |         __MAIN_CONTROL_H
-../../User/Src/main_user.c(11): warning: In file included from...
-../../User/Inc\can_comm.h(25): error: typedef redefinition with different types ('struct CAN_Message_t' vs 'struct CAN_Message_t')
-   25 | } CAN_Message_t;
-      |   ^
-../../User/Inc\main_control.h(9): note: '../../User/Inc\can_comm.h' included multiple times, additional include site here
-    9 | #include "can_comm.h"
-      |          ^
-../../User/Src/main_user.c(11): note: '../../User/Inc\can_comm.h' included multiple times, additional include site here
-   11 | #include "can_comm.h"
-      |          ^
-../../User/Src/main_user.c(11): warning: In file included from...
-../../User/Inc\can_comm.h(35): error: typedef redefinition with different types ('struct CAN_Status_t' vs 'struct CAN_Status_t')
-   35 | } CAN_Status_t;
-      |   ^
-../../User/Inc\main_control.h(9): note: '../../User/Inc\can_comm.h' included multiple times, additional include site here
-    9 | #include "can_comm.h"
-      |          ^
-../../User/Src/main_user.c(11): note: '../../User/Inc\can_comm.h' included multiple times, additional include site here
-   11 | #include "can_comm.h"
-      |          ^
 ../../User/Src/main_user.c(77): warning: unused parameter 'hadc' [-Wunused-parameter]
    77 | void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
       |                                                  ^
-3 warnings and 2 errors generated.
+1 warning generated.
 compiling main_user.c...
-../../User/Src/main_control.c(1): warning: In file included from...
-../../User/Inc\main_control.h(9): warning: In file included from...
-../../User/Inc\can_comm.h(1): warning: '__CAN_COMM_H' is used as a header guard here, followed by #define of a different macro [-Wheader-guard]
-    1 | #ifndef __CAN_COMM_H
-      |         ^~~~~~~~~~~~
-../../User/Inc\can_comm.h(2): note: '__CAN_COMM_H_' is defined here; did you mean '__CAN_COMM_H'?
-    2 | #define __CAN_COMM_H_
-      |         ^~~~~~~~~~~~~
-      |         __CAN_COMM_H
-../../User/Src/main_control.c(1): warning: In file included from...
-../../User/Inc\main_control.h(1): warning: '__MAIN_CONTROL_H' is used as a header guard here, followed by #define of a different macro [-Wheader-guard]
-    1 | #ifndef __MAIN_CONTROL_H
-      |         ^~~~~~~~~~~~~~~~
-../../User/Inc\main_control.h(2): note: '__MAIN_CONTROL_H_' is defined here; did you mean '__MAIN_CONTROL_H'?
-    2 | #define __MAIN_CONTROL_H_
-      |         ^~~~~~~~~~~~~~~~~
-      |         __MAIN_CONTROL_H
-../../User/Src/main_control.c(157): error: call to undeclared library function 'memcpy' with type 'void *(void *, const void *, unsigned int)'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
-  157 |     memcpy(&config_data[0], &sys_config.max_speed, 4);
-      |     ^
-../../User/Src/main_control.c(157): note: include the header <string.h> or explicitly provide a declaration for 'memcpy'
-2 warnings and 1 error generated.
 compiling main_control.c...
-"BLDC_FOC_Driver\BLDC_FOC_Driver.axf" - 19 Error(s), 8 Warning(s).
+"BLDC_FOC_Driver\BLDC_FOC_Driver.axf" - 3 Error(s), 6 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -189,7 +88,7 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE@6.2.0
       Include file:  CMSIS/Core/Include/tz_context.h
 Target not created.
-Build Time Elapsed:  00:00:02
+Build Time Elapsed:  00:00:00
 </pre>
 </body>
 </html>
