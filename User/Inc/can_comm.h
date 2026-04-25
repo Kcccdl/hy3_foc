@@ -1,5 +1,5 @@
 #ifndef __CAN_COMM_H
-#define __CAN_COMM_H_
+#define __CAN_COMM_H
 
 #include "stm32f4xx_hal.h"
 #include "can.h"
@@ -47,4 +47,4 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan);
 
 extern CAN_Status_t can_status;
 
-#endif /* __CAN_COMM_H_ */
+#endif /* __CAN_COMM_H */

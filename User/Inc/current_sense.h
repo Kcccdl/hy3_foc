@@ -1,5 +1,5 @@
 #ifndef __CURRENT_SENSE_H
-#define __CURRENT_SENSE_H_
+#define __CURRENT_SENSE_H
 
 #include "stm32f4xx_hal.h"
 #include "adc.h"
@@ -33,4 +33,4 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc);
 
 extern PhaseCurrent_t phase_current;
 
-#endif /* __CURRENT_SENSE_H_ */
+#endif /* __CURRENT_SENSE_H */

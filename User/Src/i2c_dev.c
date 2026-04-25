@@ -1,5 +1,6 @@
 #include "i2c_dev.h"
 #include "string.h"
+#include <stdlib.h>
 
 I2C_HandleTypeDef hi2c1;  // CubeMX生成的I2C句柄
 I2C_Device_t i2c_dev = {0};
@@ -120,8 +121,8 @@ void I2C_Scan_All(void)
 // EEPROM写操作 (以24C02为例，256字节)
 HAL_StatusTypeDef EEPROM_Write(uint16_t addr, uint8_t *data, uint16_t len)
 {
-    uint8_t dev_addr = I2C_DEV_ADDR_EEPROM;  // 0xA0
     HAL_StatusTypeDef status;
+    uint8_t dev_addr = I2C_DEV_ADDR_EEPROM;  // 0xA0
     
     // 24C02写操作: 设备地址 + 内存地址 + 数据
     // 这里简化，实际需要处理跨页写

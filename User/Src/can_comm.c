@@ -3,7 +3,10 @@
 #include "main.h"
 #include "string.h"
 
-CAN_HandleTypeDef hcan1;  // CubeMX生成的CAN句柄，声明为extern或包含can.h
+// 声明外部变量
+extern CAN_HandleTypeDef hcan1;  // CubeMX生成的CAN句柄
+extern BLDC_Motor_t motor;      // 在main_control.c中定义
+
 CAN_Status_t can_status = {0};
 
 // CAN初始化

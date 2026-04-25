@@ -1,5 +1,5 @@
-#ifndef __I2C_DEV_H_
-#define __I2C_DEV_H_
+#ifndef __I2C_DEV_H
+#define __I2C_DEV_H
 
 #include "stm32f4xx_hal.h"
 #include "i2c.h"
@@ -38,4 +38,4 @@ float Temperature_Read(void);
 extern I2C_Device_t i2c_dev;
 extern I2C_HandleTypeDef hi2c1;  // 根据实际配置修改
 
-#endif /* __I2C_DEV_H_ */
+#endif /* __I2C_DEV_H */

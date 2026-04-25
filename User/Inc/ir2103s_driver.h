@@ -1,8 +1,9 @@
 #ifndef __IR2103S_DRIVER_H
-#define __IR2103S_DRIVER_H_
+#define __IR2103S_DRIVER_H
 
 #include "stm32f4xx_hal.h"
 #include "tim.h"
+#include "bldc.h"
 
 // IR2103S驱动相关定义
 // 使用高级定时器TIM1/TIM8产生带死区的互补PWM
@@ -35,4 +36,4 @@ void IR2103S_EmergencyStop(ThreePhasePWM_t *pwm);
 void IR2103S_SetPhaseVoltage(ThreePhasePWM_t *pwm, float vu, float vv, float vw, float vdc);
 float IR2103S_GetPWMPeriod(void);
 
-#endif /* __IR2103S_DRIVER_H_ */
+#endif /* __IR2103S_DRIVER_H */

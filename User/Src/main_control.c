@@ -2,6 +2,7 @@
 #include "tim.h"
 #include "adc.h"
 #include "math.h"
+#include "string.h"
 
 // 全局变量定义
 BLDC_Motor_t motor;

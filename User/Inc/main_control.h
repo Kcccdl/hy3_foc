@@ -1,5 +1,5 @@
 #ifndef __MAIN_CONTROL_H
-#define __MAIN_CONTROL_H_
+#define __MAIN_CONTROL_H
 
 #include "stm32f4xx_hal.h"
 #include "bldc.h"
@@ -59,4 +59,4 @@ void System_Calibrate(void);
 void System_Heartbeat(void);
 void Main_Loop(void);
 
-#endif /* __MAIN_CONTROL_H_ */
+#endif /* __MAIN_CONTROL_H */

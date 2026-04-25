@@ -26,20 +26,42 @@ Project Target 1
     └── startup_stm32f407xx.s
 ```
 
-## 3. 添加用户代码文件夹
+## 3. 添加用户代码到项目
 
-### 3.1 创建User目录
-在项目中创建 `User` 文件夹：
-1. 在项目根目录 `BLDC_FOC_Driver` 下新建文件夹 `User`
-2. 在 `User` 下创建 `Inc` 和 `Src` 两个子文件夹
+**重要说明：**
+- `User\Src` 下的 `.c` 文件**需要添加**到Keil项目
+- `User\Inc` 下的 `.h` 文件**不需要添加**（只需配置Include Paths）
 
-### 3.2 将用户代码文件添加到项目
+### 3.1 在Keil中添加User组
 1. 在Keil Project窗口中，右键点击 "Target 1"（或项目名称）
 2. 选择 "Add Group..."
 3. 输入组名 "User" 并确认
-4. 右键点击新建的 "User" 组
-5. 选择 "Add Existing Files to Group..."
-6. 浏览到 `User\Src` 目录，文件类型选择 "C Files (*.c)"，选择所有 `.c` 文件后点击 "Add"
+
+### 3.2 添加.c文件到User组
+1. 右键点击新建的 "User" 组
+2. 选择 "Add Existing Files to Group..."
+3. **关键**：在"查找范围"输入框中，直接输入完整路径并回车：
+   ```
+   C:\Users\Zzzzz\Desktop\opencode_stm32\hy3\User\Src
+   ```
+4. 文件类型选择 "C Files (*.c)"
+5. 按 `Ctrl+A` 全选所有文件
+6. 点击 "Add" 然后 "Close"
+
+**如果还是看不到文件：**
+- 确认文件确实存在：打开文件夹 `C:\Users\Zzzzz\Desktop\opencode_stm32\hy3\User\Src` 查看
+- 或者在Keil中直接把文件拖进 "User" 组（最简单）
+
+### 3.3 配置Include Paths（必须！）
+1. 点击工具栏的 "Options for Target" 按钮（或按Alt+F7）
+2. 选择 "C/C++" 标签页
+3. 在 "Include Paths" 框中，点击右侧的 "..." 按钮
+4. 添加以下路径（根据实际位置调整）：
+   - `.\User\Inc`
+   - `.\Core\Inc`
+   - `.\Drivers\CMSIS\Include`
+   - `.\Drivers\STM32F4xx_HAL_Driver\Inc`
+5. 点击 "OK" 保存
    - foc.c
    - pid.c
    - bldc.c

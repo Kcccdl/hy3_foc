@@ -1,5 +1,5 @@
 #ifndef __USER_TYPEDEFS_H
-#define __USER_TYPEDEFS_H_
+#define __USER_TYPEDEFS_H
 
 #include "stm32f4xx_hal.h"
 #include "math.h"
@@ -75,4 +75,4 @@ typedef enum
 #define RPM_TO_RADS(rpm) ((rpm) * M_2PI / 60.0f)
 #define RADS_TO_RPM(rads) ((rads) * 60.0f / M_2PI)
 
-#endif /* __USER_TYPEDEFS_H_ */
+#endif /* __USER_TYPEDEFS_H */
