@@ -1117,8 +1117,8 @@ I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_spi.h)(0x692B2934)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h)(0x692B2934)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h)(0x692B2934)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h)(0x692B2934)
-F (..\..\User\Src\bldc.c)(0x69EB63FD)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../../User/Inc -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc-I./RTE/_BLDC_FOC_Driver-ID:/keil_uvision_packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o bldc_foc_driver/bldc.o -MMD)
-I (..\..\User\Inc\bldc.h)(0x69EB63DB)
+F (..\..\User\Src\bldc.c)(0x69ECCD00)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../../User/Inc -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc-I./RTE/_BLDC_FOC_Driver-ID:/keil_uvision_packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o bldc_foc_driver/bldc.o -MMD)
+I (..\..\User\Inc\bldc.h)(0x69ECCCD0)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x692B2934)
 I (..\Core\Inc\stm32f4xx_hal_conf.h)(0x69EC9AA3)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x692B2934)
@@ -1150,13 +1150,13 @@ I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_spi.h)(0x692B2934)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h)(0x692B2934)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h)(0x692B2934)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h)(0x692B2934)
-I (..\..\User\Inc\pid.h)(0x69EB63AE)
-I (..\..\User\Inc\foc.h)(0x69EB6387)
+I (..\..\User\Inc\pid.h)(0x69ECCF93)
+I (..\..\User\Inc\foc.h)(0x69ECCFB2)
 I (..\..\User\Inc\encoder.h)(0x69EB6402)
 I (..\Core\Inc\tim.h)(0x69EC9AA2)
 I (..\Core\Inc\main.h)(0x69EC9AA3)
-F (..\..\User\Src\can_comm.c)(0x69ECC7BE)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../../User/Inc -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc-I./RTE/_BLDC_FOC_Driver-ID:/keil_uvision_packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o bldc_foc_driver/can_comm.o -MMD)
-I (..\..\User\Inc\can_comm.h)(0x69ECC7A3)
+F (..\..\User\Src\can_comm.c)(0x69ECCD27)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../../User/Inc -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc-I./RTE/_BLDC_FOC_Driver-ID:/keil_uvision_packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o bldc_foc_driver/can_comm.o -MMD)
+I (..\..\User\Inc\can_comm.h)(0x69ECD0AB)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x692B2934)
 I (..\Core\Inc\stm32f4xx_hal_conf.h)(0x69EC9AA3)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x692B2934)
@@ -1190,11 +1190,11 @@ I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h)(0x692B2934)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h)(0x692B2934)
 I (..\Core\Inc\can.h)(0x69EC9AA2)
 I (..\Core\Inc\main.h)(0x69EC9AA3)
-I (..\..\User\Inc\bldc.h)(0x69EB63DB)
-I (..\..\User\Inc\pid.h)(0x69EB63AE)
-I (..\..\User\Inc\foc.h)(0x69EB6387)
+I (..\..\User\Inc\bldc.h)(0x69ECCCD0)
+I (..\..\User\Inc\pid.h)(0x69ECCF93)
+I (..\..\User\Inc\foc.h)(0x69ECCFB2)
 I (..\..\User\Inc\encoder.h)(0x69EB6402)
-F (..\..\User\Src\current_sense.c)(0x69ECC7D7)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../../User/Inc -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc-I./RTE/_BLDC_FOC_Driver-ID:/keil_uvision_packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o bldc_foc_driver/current_sense.o -MMD)
+F (..\..\User\Src\current_sense.c)(0x69ECCEB4)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../../User/Inc -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc-I./RTE/_BLDC_FOC_Driver-ID:/keil_uvision_packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o bldc_foc_driver/current_sense.o -MMD)
 I (..\..\User\Inc\current_sense.h)(0x69ECC7C4)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x692B2934)
 I (..\Core\Inc\stm32f4xx_hal_conf.h)(0x69EC9AA3)
@@ -1229,7 +1229,7 @@ I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h)(0x692B2934)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h)(0x692B2934)
 I (..\Core\Inc\adc.h)(0x69EC9AA2)
 I (..\Core\Inc\main.h)(0x69EC9AA3)
-F (..\..\User\Src\encoder.c)(0x69EB6412)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../../User/Inc -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc-I./RTE/_BLDC_FOC_Driver-ID:/keil_uvision_packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o bldc_foc_driver/encoder.o -MMD)
+F (..\..\User\Src\encoder.c)(0x69ECCE73)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../../User/Inc -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc-I./RTE/_BLDC_FOC_Driver-ID:/keil_uvision_packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o bldc_foc_driver/encoder.o -MMD)
 I (..\..\User\Inc\encoder.h)(0x69EB6402)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x692B2934)
 I (..\Core\Inc\stm32f4xx_hal_conf.h)(0x69EC9AA3)
@@ -1264,8 +1264,8 @@ I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h)(0x692B2934)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h)(0x692B2934)
 I (..\Core\Inc\spi.h)(0x69EC9AA2)
 I (..\Core\Inc\main.h)(0x69EC9AA3)
-F (..\..\User\Src\foc.c)(0x69EB63AA)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../../User/Inc -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc-I./RTE/_BLDC_FOC_Driver-ID:/keil_uvision_packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o bldc_foc_driver/foc.o -MMD)
-I (..\..\User\Inc\foc.h)(0x69EB6387)
+F (..\..\User\Src\foc.c)(0x69ECD107)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../../User/Inc -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc-I./RTE/_BLDC_FOC_Driver-ID:/keil_uvision_packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o bldc_foc_driver/foc.o -MMD)
+I (..\..\User\Inc\foc.h)(0x69ECCFB2)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x692B2934)
 I (..\Core\Inc\stm32f4xx_hal_conf.h)(0x69EC9AA3)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x692B2934)
@@ -1297,7 +1297,7 @@ I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_spi.h)(0x692B2934)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h)(0x692B2934)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h)(0x692B2934)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h)(0x692B2934)
-F (..\..\User\Src\i2c_dev.c)(0x69ECC80E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../../User/Inc -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc-I./RTE/_BLDC_FOC_Driver-ID:/keil_uvision_packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o bldc_foc_driver/i2c_dev.o -MMD)
+F (..\..\User\Src\i2c_dev.c)(0x69ECD2F6)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../../User/Inc -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc-I./RTE/_BLDC_FOC_Driver-ID:/keil_uvision_packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o bldc_foc_driver/i2c_dev.o -MMD)
 I (..\..\User\Inc\i2c_dev.h)(0x69ECC816)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x692B2934)
 I (..\Core\Inc\stm32f4xx_hal_conf.h)(0x69EC9AA3)
@@ -1332,8 +1332,8 @@ I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h)(0x692B2934)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h)(0x692B2934)
 I (..\Core\Inc\i2c.h)(0x69EC9AA2)
 I (..\Core\Inc\main.h)(0x69EC9AA3)
-F (..\..\User\Src\ir2103s_driver.c)(0x69ECC7F6)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../../User/Inc -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc-I./RTE/_BLDC_FOC_Driver-ID:/keil_uvision_packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o bldc_foc_driver/ir2103s_driver.o -MMD)
-I (..\..\User\Inc\ir2103s_driver.h)(0x69ECC7DE)
+F (..\..\User\Src\ir2103s_driver.c)(0x69ECD140)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../../User/Inc -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc-I./RTE/_BLDC_FOC_Driver-ID:/keil_uvision_packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o bldc_foc_driver/ir2103s_driver.o -MMD)
+I (..\..\User\Inc\ir2103s_driver.h)(0x69ECD06A)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x692B2934)
 I (..\Core\Inc\stm32f4xx_hal_conf.h)(0x69EC9AA3)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x692B2934)
@@ -1367,12 +1367,12 @@ I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h)(0x692B2934)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h)(0x692B2934)
 I (..\Core\Inc\tim.h)(0x69EC9AA2)
 I (..\Core\Inc\main.h)(0x69EC9AA3)
-I (..\..\User\Inc\bldc.h)(0x69EB63DB)
-I (..\..\User\Inc\pid.h)(0x69EB63AE)
-I (..\..\User\Inc\foc.h)(0x69EB6387)
+I (..\..\User\Inc\bldc.h)(0x69ECCCD0)
+I (..\..\User\Inc\pid.h)(0x69ECCF93)
+I (..\..\User\Inc\foc.h)(0x69ECCFB2)
 I (..\..\User\Inc\encoder.h)(0x69EB6402)
-F (..\..\User\Src\main_control.c)(0x69ECC82F)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../../User/Inc -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc-I./RTE/_BLDC_FOC_Driver-ID:/keil_uvision_packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o bldc_foc_driver/main_control.o -MMD)
-I (..\..\User\Inc\main_control.h)(0x69ECC707)
+F (..\..\User\Src\main_control.c)(0x69ECCECA)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../../User/Inc -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc-I./RTE/_BLDC_FOC_Driver-ID:/keil_uvision_packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o bldc_foc_driver/main_control.o -MMD)
+I (..\..\User\Inc\main_control.h)(0x69ECD041)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x692B2934)
 I (..\Core\Inc\stm32f4xx_hal_conf.h)(0x69EC9AA3)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x692B2934)
@@ -1404,20 +1404,20 @@ I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_spi.h)(0x692B2934)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h)(0x692B2934)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h)(0x692B2934)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h)(0x692B2934)
-I (..\..\User\Inc\bldc.h)(0x69EB63DB)
-I (..\..\User\Inc\pid.h)(0x69EB63AE)
-I (..\..\User\Inc\foc.h)(0x69EB6387)
+I (..\..\User\Inc\bldc.h)(0x69ECCCD0)
+I (..\..\User\Inc\pid.h)(0x69ECCF93)
+I (..\..\User\Inc\foc.h)(0x69ECCFB2)
 I (..\..\User\Inc\encoder.h)(0x69EB6402)
-I (..\..\User\Inc\can_comm.h)(0x69ECC7A3)
+I (..\..\User\Inc\can_comm.h)(0x69ECD0AB)
 I (..\Core\Inc\can.h)(0x69EC9AA2)
 I (..\Core\Inc\main.h)(0x69EC9AA3)
-I (..\..\User\Inc\rs422_comm.h)(0x69EB64C2)
+I (..\..\User\Inc\rs422_comm.h)(0x69ECD024)
 I (..\Core\Inc\usart.h)(0x69EC9AA2)
 I (..\..\User\Inc\i2c_dev.h)(0x69ECC816)
 I (..\Core\Inc\i2c.h)(0x69EC9AA2)
 I (..\Core\Inc\tim.h)(0x69EC9AA2)
 I (..\Core\Inc\adc.h)(0x69EC9AA2)
-F (..\..\User\Src\main_user.c)(0x69EB6483)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../../User/Inc -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc-I./RTE/_BLDC_FOC_Driver-ID:/keil_uvision_packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o bldc_foc_driver/main_user.o -MMD)
+F (..\..\User\Src\main_user.c)(0x69ECD2A0)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../../User/Inc -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc-I./RTE/_BLDC_FOC_Driver-ID:/keil_uvision_packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o bldc_foc_driver/main_user.o -MMD)
 I (..\Core\Inc\main.h)(0x69EC9AA3)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x692B2934)
 I (..\Core\Inc\stm32f4xx_hal_conf.h)(0x69EC9AA3)
@@ -1450,22 +1450,22 @@ I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_spi.h)(0x692B2934)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h)(0x692B2934)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h)(0x692B2934)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h)(0x692B2934)
-I (..\..\User\Inc\main_control.h)(0x69ECC707)
-I (..\..\User\Inc\bldc.h)(0x69EB63DB)
-I (..\..\User\Inc\pid.h)(0x69EB63AE)
-I (..\..\User\Inc\foc.h)(0x69EB6387)
+I (..\..\User\Inc\main_control.h)(0x69ECD041)
+I (..\..\User\Inc\bldc.h)(0x69ECCCD0)
+I (..\..\User\Inc\pid.h)(0x69ECCF93)
+I (..\..\User\Inc\foc.h)(0x69ECCFB2)
 I (..\..\User\Inc\encoder.h)(0x69EB6402)
-I (..\..\User\Inc\can_comm.h)(0x69ECC7A3)
+I (..\..\User\Inc\can_comm.h)(0x69ECD0AB)
 I (..\Core\Inc\can.h)(0x69EC9AA2)
-I (..\..\User\Inc\rs422_comm.h)(0x69EB64C2)
+I (..\..\User\Inc\rs422_comm.h)(0x69ECD024)
 I (..\Core\Inc\usart.h)(0x69EC9AA2)
 I (..\..\User\Inc\i2c_dev.h)(0x69ECC816)
 I (..\Core\Inc\i2c.h)(0x69EC9AA2)
 I (..\Core\Inc\tim.h)(0x69EC9AA2)
 I (..\Core\Inc\spi.h)(0x69EC9AA2)
 I (..\Core\Inc\adc.h)(0x69EC9AA2)
-F (..\..\User\Src\pid.c)(0x69EB63BB)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../../User/Inc -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc-I./RTE/_BLDC_FOC_Driver-ID:/keil_uvision_packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o bldc_foc_driver/pid.o -MMD)
-I (..\..\User\Inc\pid.h)(0x69EB63AE)
+F (..\..\User\Src\pid.c)(0x69ECCE5F)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../../User/Inc -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc-I./RTE/_BLDC_FOC_Driver-ID:/keil_uvision_packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o bldc_foc_driver/pid.o -MMD)
+I (..\..\User\Inc\pid.h)(0x69ECCF93)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x692B2934)
 I (..\Core\Inc\stm32f4xx_hal_conf.h)(0x69EC9AA3)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x692B2934)
@@ -1497,8 +1497,8 @@ I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_spi.h)(0x692B2934)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h)(0x692B2934)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h)(0x692B2934)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h)(0x692B2934)
-F (..\..\User\Src\rs422_comm.c)(0x69EB624D)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../../User/Inc -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc-I./RTE/_BLDC_FOC_Driver-ID:/keil_uvision_packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o bldc_foc_driver/rs422_comm.o -MMD)
-I (..\..\User\Inc\rs422_comm.h)(0x69EB64C2)
+F (..\..\User\Src\rs422_comm.c)(0x69ECD2CA)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../../User/Inc -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc-I./RTE/_BLDC_FOC_Driver-ID:/keil_uvision_packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o bldc_foc_driver/rs422_comm.o -MMD)
+I (..\..\User\Inc\rs422_comm.h)(0x69ECD024)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x692B2934)
 I (..\Core\Inc\stm32f4xx_hal_conf.h)(0x69EC9AA3)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x692B2934)
@@ -1532,7 +1532,7 @@ I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h)(0x692B2934)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h)(0x692B2934)
 I (..\Core\Inc\usart.h)(0x69EC9AA2)
 I (..\Core\Inc\main.h)(0x69EC9AA3)
-I (..\..\User\Inc\bldc.h)(0x69EB63DB)
-I (..\..\User\Inc\pid.h)(0x69EB63AE)
-I (..\..\User\Inc\foc.h)(0x69EB6387)
+I (..\..\User\Inc\bldc.h)(0x69ECCCD0)
+I (..\..\User\Inc\pid.h)(0x69ECCF93)
+I (..\..\User\Inc\foc.h)(0x69ECCFB2)
 I (..\..\User\Inc\encoder.h)(0x69EB6402)

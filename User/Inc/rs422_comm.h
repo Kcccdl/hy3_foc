@@ -30,27 +30,27 @@
 // 接收状态机
 typedef enum
 {
-    RX_STATE_IDLE = 0,       // 空闲
-    RX_STATE_HEADER1 = 1,    // 收到帧头1
-    RX_STATE_HEADER2 = 2,    // 收到帧头2
-    RX_STATE_CMD = 3,        // 收到命令
-    RX_STATE_LEN = 4,        // 收到长度
-    RX_STATE_DATA = 5,       // 接收数据
-    RX_STATE_CRC = 6         // 接收CRC
+    RX_STATE_IDLE = 0,       // 空闲;
+    RX_STATE_HEADER1 = 1,    // 收到帧头1;
+    RX_STATE_HEADER2 = 2,    // 收到帧头2;
+    RX_STATE_CMD = 3,        // 收到命令;
+    RX_STATE_LEN = 4,        // 收到长度;
+    RX_STATE_DATA = 5,       // 接收数据;
+    RX_STATE_CRC = 6         // 接收CRC;
 } RX_State_t;
 
 // RS422通信结构体
 typedef struct
 {
-    uint8_t rx_buffer[64];   // 接收缓冲区
-    uint8_t tx_buffer[64];   // 发送缓冲区
-    uint8_t rx_index;        // 接收索引
-    uint8_t rx_len;          // 接收数据长度
-    uint8_t rx_cmd;          // 接收的命令
-    RX_State_t rx_state;     // 接收状态
-    uint8_t frame_ready;     // 帧接收完成标志
-    uint32_t rx_timeout;     // 接收超时
-    uint32_t last_rx_time;   // 上次接收时间
+    uint8_t rx_buffer[64];   // 接收缓冲区;
+    uint8_t tx_buffer[64];   // 发送缓冲区;
+    uint8_t rx_index;        // 接收索引;
+    uint8_t rx_len;          // 接收数据长度;
+    uint8_t rx_cmd;          // 接收的命令;
+    RX_State_t rx_state;     // 接收状态;
+    uint8_t frame_ready;     // 帧接收完成标志;
+    uint32_t rx_timeout;     // 接收超时;
+    uint32_t last_rx_time;   // 上次接收时间;
 } RS422_Comm_t;
 
 // 函数声明

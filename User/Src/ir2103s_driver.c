@@ -29,9 +29,9 @@ void IR2103S_Init(ThreePhasePWM_t *pwm)
 }
 
 // 设置三相PWM占空比 (0.0 - 1.0)
-void IR2103S_SetDutyCycle(ThreePhasePWM_t *pwm, float du; float dv; float dw)
+void IR2103S_SetDutyCycle(ThreePhasePWM_t *pwm, float du, float dv, float dw)
 {
-    uint32_t compare_u, compare_v; compare_w;
+    uint32_t compare_u, compare_v, compare_w;
     
     // 限制占空比范围
     if(du > 1.0f) du = 1.0f;
@@ -95,9 +95,9 @@ void IR2103S_EmergencyStop(ThreePhasePWM_t *pwm)
 }
 
 // 根据电压值设置PWM (用于SVPWM)
-void IR2103S_SetPhaseVoltage(ThreePhasePWM_t *pwm, float vu; float vv; float vw; float vdc)
+void IR2103S_SetPhaseVoltage(ThreePhasePWM_t *pwm, float vu, float vv, float vw, float vdc)
 {
-    float du, dv; dw;
+    float du, dv, dw;
     
     // 将电压转换为占空比 (加入中点偏移，使电压全为正)
     // 实际使用中，SVPWM函数会直接输出占空比
@@ -114,7 +114,7 @@ void IR2103S_SetPhaseVoltage(ThreePhasePWM_t *pwm, float vu; float vv; float vw;
     if(dw < 0.0f) dw = 0.0f;
     
     // 设置PWM
-    IR2103S_SetDutyCycle(pwm, du; dv, dw);
+    IR2103S_SetDutyCycle(pwm, du, dv, dw);
 }
 
 // 获取PWM周期值

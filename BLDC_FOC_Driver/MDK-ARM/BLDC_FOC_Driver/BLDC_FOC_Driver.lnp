@@ -34,6 +34,17 @@
 "bldc_foc_driver\stm32f4xx_hal_tim_ex.o"
 "bldc_foc_driver\stm32f4xx_hal_uart.o"
 "bldc_foc_driver\system_stm32f4xx.o"
+"bldc_foc_driver\bldc.o"
+"bldc_foc_driver\can_comm.o"
+"bldc_foc_driver\current_sense.o"
+"bldc_foc_driver\encoder.o"
+"bldc_foc_driver\foc.o"
+"bldc_foc_driver\i2c_dev.o"
+"bldc_foc_driver\ir2103s_driver.o"
+"bldc_foc_driver\main_control.o"
+"bldc_foc_driver\main_user.o"
+"bldc_foc_driver\pid.o"
+"bldc_foc_driver\rs422_comm.o"
 --strict --scatter "BLDC_FOC_Driver\BLDC_FOC_Driver.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

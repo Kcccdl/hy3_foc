@@ -1,5 +1,5 @@
-#ifndef __USER_TYPEDEFS_H
-#define __USER_TYPEDEFS_H
+#ifndef __USER_TYPEDEFS_H_
+#define __USER_TYPEDEFS_H_
 
 #include "stm32f4xx_hal.h"
 #include "math.h"
@@ -41,7 +41,7 @@
 #define READ_BIT(reg, bit) (((reg) >> (bit)) & 1U)
 
 // 错误代码定义
-typedef enum
+typedef enum>
 {
     ERR_NONE = 0x0000,
     ERR_OVER_CURRENT = 0x0001,
@@ -75,4 +75,4 @@ typedef enum
 #define RPM_TO_RADS(rpm) ((rpm) * M_2PI / 60.0f)
 #define RADS_TO_RPM(rads) ((rads) * 60.0f / M_2PI)
 
-#endif /* __USER_TYPEDEFS_H */
+#endif /* __USER_TYPEDEFS_H_ */

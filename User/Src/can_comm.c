@@ -4,7 +4,6 @@
 #include "string.h"
 
 extern CAN_HandleTypeDef hcan1;  // CubeMX生成的CAN句柄
-
 CAN_Status_t can_status = {0};
 extern BLDC_Motor_t motor;      // 在main_control.c中定义
 
@@ -29,7 +28,7 @@ void CAN_Comm_Init(void)
 }
 
 // 发送CAN消息
-void CAN_Send_Message(uint32_t id; uint8_t *data; uint8_t len)
+void CAN_Send_Message(uint32_t id, uint8_t *data, uint8_t len)
 {
     CAN_TxHeaderTypeDef tx_header;
     uint32_t tx_mailbox;
@@ -43,7 +42,7 @@ void CAN_Send_Message(uint32_t id; uint8_t *data; uint8_t len)
     tx_header.TransmitGlobalTime = DISABLE;
     
     // 发送消息
-    if(HAL_CAN_AddTxMessage(&hcan1; &tx_header; data; &tx_mailbox) == HAL_OK)
+    if(HAL_CAN_AddTxMessage(&hcan1, &tx_header, data, &tx_mailbox) == HAL_OK)
     {
         can_status.tx_count++;
     }
@@ -54,13 +53,13 @@ void CAN_Send_Message(uint32_t id; uint8_t *data; uint8_t len)
 }
 
 // CAN接收回调函数
-void CAN_Receive_Callback(CAN_HandleTypeDef *hcan; CAN_Message_t *msg)
+void CAN_Receive_Callback(CAN_HandleTypeDef *hcan, CAN_Message_t *msg)
 {
     CAN_RxHeaderTypeDef rx_header;
     uint8_t rx_data[8];
     
     // 接收消息
-    if(HAL_CAN_GetRxMessage(hcan; CAN_RX_FIFO0; &rx_header; rx_data) == HAL_OK)
+    if(HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &rx_header, rx_data) == HAL_OK)
     {
         can_status.rx_count++;
         can_status.last_rx_time = HAL_GetTick();
@@ -90,8 +89,8 @@ void CAN_Process_Command(CAN_Message_t *msg)
             // 速度指令: 4字节浮点数
             if(msg->len >= 4)
             {
-                memcpy(&value; data; 4);
-                BLDC_SetSpeed(&motor; value);
+                memcpy(&value, data, 4);
+                BLDC_SetSpeed(&motor, value);
             }
             break;
             
@@ -99,8 +98,8 @@ void CAN_Process_Command(CAN_Message_t *msg)
             // 电流指令: 4字节浮点数
             if(msg->len >= 4)
             {
-                memcpy(&value; data; 4);
-                BLDC_SetCurrent(&motor; value);
+                memcpy(&value, data, 4);
+                BLDC_SetCurrent(&motor, value);
             }
             break;
             
@@ -110,7 +109,7 @@ void CAN_Process_Command(CAN_Message_t *msg)
             {
                 uint8_t param_id = data[0];
                 float param_value;
-                memcpy(&param_value; &data[1]; 4);
+                memcpy(&param_value, &data[1], 4);
                 
                 // 根据param_id设置对应参数
                 switch(param_id)
@@ -134,15 +133,15 @@ void CAN_Process_Command(CAN_Message_t *msg)
 }
 
 // 发送状态反馈
-void CAN_Send_Status(float speed; float current)
+void CAN_Send_Status(float speed, float current)
 {
     uint8_t data[8];
     
     // 数据格式: 字节0-3=速度(RPM), 字节4-7=电流(A)
-    memcpy(&data[0]; &speed; 4);
-    memcpy(&data[4]; &current; 4);
+    memcpy(&data[0], &speed, 4);
+    memcpy(&data[4], &current, 4);
     
-    CAN_Send_Message(CAN_ID_STATUS; data; 8);
+    CAN_Send_Message(CAN_ID_STATUS, data, 8);
 }
 
 // 发送心跳包
@@ -151,7 +150,7 @@ void CAN_Send_Heartbeat(void)
     uint8_t data[1];
     data[0] = 0x01;  // 心跳标志
     
-    CAN_Send_Message(CAN_ID_HEARTBEAT; data; 1);
+    CAN_Send_Message(CAN_ID_HEARTBEAT, data, 1);
 }
 
 // 设置CAN波特率
@@ -178,7 +177,7 @@ void CAN_Filter_Config(void)
     can_filter.FilterActivation = ENABLE;                // 激活过滤器
     can_filter.SlaveStartFilterBank = 14;                // 从过滤器组14开始
     
-    HAL_CAN_ConfigFilter(&hcan1; &can_filter);
+    HAL_CAN_ConfigFilter(&hcan1, &can_filter);
 }
 
 // CAN接收中断回调 (HAL库回调函数)
@@ -187,6 +186,6 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
     CAN_Message_t msg;
     if(hcan->Instance == CAN1)
     {
-        CAN_Receive_Callback(hcan; &msg);
+        CAN_Receive_Callback(hcan, &msg);
     }
 }

@@ -2,17 +2,15 @@
 #include "string.h"
 #include <stdlib.h>
 
-I2C_HandleTypeDef hi2c1;  // CubeMX生成的I2C句柄
 I2C_Device_t i2c_dev = {0};
+extern I2C_HandleTypeDef hi2c1;
 
-// I2C初始化
 void I2C_Init(void)
 {
     i2c_dev.initialized = 1;
     i2c_dev.error_count = 0;
 }
 
-// I2C写单个字节
 HAL_StatusTypeDef I2C_Write_Byte(uint8_t dev_addr, uint8_t reg_addr, uint8_t data)
 {
     HAL_StatusTypeDef status;
@@ -29,12 +27,10 @@ HAL_StatusTypeDef I2C_Write_Byte(uint8_t dev_addr, uint8_t reg_addr, uint8_t dat
     return status;
 }
 
-// I2C读单个字节
 HAL_StatusTypeDef I2C_Read_Byte(uint8_t dev_addr, uint8_t reg_addr, uint8_t *data)
 {
     HAL_StatusTypeDef status;
     
-    // 先发送寄存器地址
     status = HAL_I2C_Master_Transmit(&hi2c1, dev_addr, &reg_addr, 1, I2C_TIMEOUT);
     if(status != HAL_OK)
     {
@@ -42,7 +38,6 @@ HAL_StatusTypeDef I2C_Read_Byte(uint8_t dev_addr, uint8_t reg_addr, uint8_t *dat
         return status;
     }
     
-    // 再读取数据
     status = HAL_I2C_Master_Receive(&hi2c1, dev_addr, data, 1, I2C_TIMEOUT);
     if(status != HAL_OK)
         i2c_dev.error_count++;
@@ -50,13 +45,11 @@ HAL_StatusTypeDef I2C_Read_Byte(uint8_t dev_addr, uint8_t reg_addr, uint8_t *dat
     return status;
 }
 
-// I2C写多个字节
 HAL_StatusTypeDef I2C_Write_Bytes(uint8_t dev_addr, uint8_t reg_addr, uint8_t *data, uint16_t len)
 {
     HAL_StatusTypeDef status;
     uint8_t *tx_buffer;
     
-    // 分配缓冲区 (寄存器地址 + 数据)
     tx_buffer = (uint8_t*)malloc(len + 1);
     if(tx_buffer == NULL)
         return HAL_ERROR;
@@ -74,12 +67,10 @@ HAL_StatusTypeDef I2C_Write_Bytes(uint8_t dev_addr, uint8_t reg_addr, uint8_t *d
     return status;
 }
 
-// I2C读多个字节
 HAL_StatusTypeDef I2C_Read_Bytes(uint8_t dev_addr, uint8_t reg_addr, uint8_t *data, uint16_t len)
 {
     HAL_StatusTypeDef status;
     
-    // 先发送寄存器地址
     status = HAL_I2C_Master_Transmit(&hi2c1, dev_addr, &reg_addr, 1, I2C_TIMEOUT);
     if(status != HAL_OK)
     {
@@ -87,7 +78,6 @@ HAL_StatusTypeDef I2C_Read_Bytes(uint8_t dev_addr, uint8_t reg_addr, uint8_t *da
         return status;
     }
     
-    // 读取多个字节
     status = HAL_I2C_Master_Receive(&hi2c1, dev_addr, data, len, I2C_TIMEOUT);
     if(status != HAL_OK)
         i2c_dev.error_count++;
@@ -95,13 +85,11 @@ HAL_StatusTypeDef I2C_Read_Bytes(uint8_t dev_addr, uint8_t reg_addr, uint8_t *da
     return status;
 }
 
-// 扫描单个I2C设备是否在线
 HAL_StatusTypeDef I2C_Scan_Device(uint8_t dev_addr)
 {
     return HAL_I2C_Master_Transmit(&hi2c1, dev_addr, NULL, 0, I2C_TIMEOUT);
 }
 
-// 扫描所有I2C设备 (7位地址范围: 0x08-0x77)
 void I2C_Scan_All(void)
 {
     uint8_t addr;
@@ -109,40 +97,32 @@ void I2C_Scan_All(void)
     
     for(addr = 0x08; addr <= 0x77; addr++)
     {
-        status = I2C_Scan_Device(addr << 1);  // HAL库地址需要左移1位
+        status = I2C_Scan_Device(addr << 1);
         if(status == HAL_OK)
         {
-            // 设备存在于该地址
-            // 可以通过串口打印或其他方式输出
+            // Device found
         }
     }
 }
 
-// EEPROM写操作 (以24C02为例，256字节)
 HAL_StatusTypeDef EEPROM_Write(uint16_t addr, uint8_t *data, uint16_t len)
 {
+    uint8_t dev_addr = I2C_DEV_ADDR_EEPROM;
     HAL_StatusTypeDef status;
-    uint8_t dev_addr = I2C_DEV_ADDR_EEPROM;  // 0xA0
     
-    // 24C02写操作: 设备地址 + 内存地址 + 数据
-    // 这里简化，实际需要处理跨页写
     status = I2C_Write_Bytes(dev_addr, (uint8_t)addr, data, len);
     
-    // EEPROM写周期需要延时 (典型5ms)
     HAL_Delay(5);
     
     return status;
 }
 
-// EEPROM读操作
 HAL_StatusTypeDef EEPROM_Read(uint16_t addr, uint8_t *data, uint16_t len)
 {
-    uint8_t dev_addr = I2C_DEV_ADDR_EEPROM;  // 0xA0
-    
+    uint8_t dev_addr = I2C_DEV_ADDR_EEPROM;
     return I2C_Read_Bytes(dev_addr, (uint8_t)addr, data, len);
 }
 
-// 读取温度传感器 (以LM75为例)
 float Temperature_Read(void)
 {
     uint8_t dev_addr = I2C_DEV_ADDR_SENSOR;
@@ -150,17 +130,13 @@ float Temperature_Read(void)
     int16_t temp_raw;
     float temperature;
     
-    // LM75温度寄存器地址为0x00
     if(I2C_Read_Bytes(dev_addr, 0x00, data, 2) == HAL_OK)
     {
         temp_raw = ((int16_t)data[0] << 8) | data[1];
-        temp_raw >>= 5;  // LM75数据格式: 11位，左对齐
-        
-        // 分辨率为0.125度
+        temp_raw >>= 5;
         temperature = temp_raw * 0.125f;
-        
         return temperature;
     }
     
-    return -999.0f;  // 错误返回值
+    return -999.0f;
 }

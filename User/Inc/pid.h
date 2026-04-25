@@ -6,18 +6,18 @@
 // PID控制器结构体
 typedef struct
 {
-    float Kp;          // 比例系数
-    float Ki;          // 积分系数
-    float Kd;          // 微分系数
+    float Kp;          // 比例系数;
+    float Ki;          // 积分系数;
+    float Kd;          // 微分系数;
     
-    float integral;    // 积分项累计
-    float prev_error;  // 上一次误差
-    float max_integral;// 积分限幅
-    float max_output;  // 输出限幅
+    float integral;    // 积分项累计;
+    float prev_error;  // 上一次误差;
+    float max_integral;// 积分限幅;
+    float max_output;  // 输出限幅;
     
-    float target;      // 目标值
-    float actual;      // 实际值
-    float output;      // PID输出
+    float target;      // 目标值;
+    float actual;      // 实际值;
+    float output;      // PID输出;
 } PID_t;
 
 // PID控制器初始化

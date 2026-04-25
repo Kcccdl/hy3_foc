@@ -109,7 +109,6 @@ void BLDC_SixStep_Commutation(BLDC_Motor_t *motor)
     switch(motor->hall_state)
     {
         case 0x05:  // 霍尔状态 101 (A+B-)
-            // PWM_U = PWM, PWM_V = 0, PWM_W = 0 (关闭)
             __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, pwm_value);
             __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, 0);
             __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_3, 0);
@@ -230,7 +229,6 @@ void BLDC_ReadHallSensors(BLDC_Motor_t *motor)
     uint8_t hall_a, hall_b, hall_c;
     
     // 读取三个霍尔传感器引脚电平
-    // 根据实际硬件连接修改引脚定义
     hall_a = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0);  // 假设霍尔A接PA0
     hall_b = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_1);  // 假设霍尔B接PA1
     hall_c = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_2);  // 假设霍尔C接PA2

@@ -35,55 +35,37 @@ void FOC_Init(FOC_t *foc)
 }
 
 // Clark变换：三相静止坐标系(abc) -> 两相静止坐标系(alpha-beta)
-// Ia, Ib, Ic: 三相电流
-// iab: 输出alpha-beta坐标系电流
-void Clark_Transform(float Ia, float Ib, float Ic, AlphaBeta_t *iab)
+void Clark_Transform(float Ia, float Ib, float Ic, AlphaBeta_t *i_ab)
 {
-    // Ia + Ib + Ic = 0 (三相平衡)
-    // alpha = Ia
-    // beta = (Ia + 2*Ib) / sqrt(3)
-    iab->alpha = Ia;
-    iab->beta = (Ia + 2.0f * Ib) / SQRT3;
+    i_ab->alpha = Ia;
+    i_ab->beta = (Ia + 2.0f * Ib) / SQRT3;
 }
 
 // Park变换：两相静止坐标系(alpha-beta) -> 两相旋转坐标系(d-q)
-// iab: alpha-beta坐标系电流
-// theta: 转子电角度
-// idq: 输出dq坐标系电流
-void Park_Transform(AlphaBeta_t *iab, float theta, DQ_t *idq)
+void Park_Transform(AlphaBeta_t *i_ab, float theta, DQ_t *idq)
 {
     float cos_theta = cosf(theta);
     float sin_theta = sinf(theta);
     
-    // d = alpha * cos(theta) + beta * sin(theta)
-    // q = -alpha * sin(theta) + beta * cos(theta)
-    idq->d = iab->alpha * cos_theta + iab->beta * sin_theta;
-    idq->q = -iab->alpha * sin_theta + iab->beta * cos_theta;
+    idq->d = i_ab->alpha * cos_theta + i_ab->beta * sin_theta;
+    idq->q = -i_ab->alpha * sin_theta + i_ab->beta * cos_theta;
 }
 
 // 反Park变换：两相旋转坐标系(d-q) -> 两相静止坐标系(alpha-beta)
-// vdq: dq坐标系电压
-// theta: 转子电角度
-// vab: 输出alpha-beta坐标系电压
-void Inverse_Park_Transform(DQ_t *vdq, float theta, AlphaBeta_t *vab)
+void Inverse_Park_Transform(DQ_t *vdq, float theta, AlphaBeta_t *v_ab)
 {
     float cos_theta = cosf(theta);
     float sin_theta = sinf(theta);
     
-    // alpha = d * cos(theta) - q * sin(theta)
-    // beta = d * sin(theta) + q * cos(theta)
-    vab->alpha = vdq->d * cos_theta - vdq->q * sin_theta;
-    vab->beta = vdq->d * sin_theta + vdq->q * cos_theta;
+    v_ab->alpha = vdq->d * cos_theta - vdq->q * sin_theta;
+    v_ab->beta = vdq->d * sin_theta + vdq->q * cos_theta;
 }
 
 // SVPWM生成函数
-// vab: alpha-beta坐标系电压
-// svpwm: SVPWM配置参数
-// pwm: 输出三相PWM占空比
-void SVPWM_Generate(AlphaBeta_t *vab, SVPWM_t *svpwm, PWM_Output_t *pwm)
+void SVPWM_Generate(AlphaBeta_t *v_ab, SVPWM_t *svpwm, PWM_Output_t *pwm)
 {
-    float Valpha = vab->alpha;
-    float Vbeta = vab->beta;
+    float Valpha = v_ab->alpha;
+    float Vbeta = v_ab->beta;
     float Udc = svpwm->Udc;
     
     // 计算扇区
@@ -91,7 +73,6 @@ void SVPWM_Generate(AlphaBeta_t *vab, SVPWM_t *svpwm, PWM_Output_t *pwm)
     float Vb = (SQRT3 * Valpha - Vbeta) / 2.0f;
     float Vc = (-SQRT3 * Valpha - Vbeta) / 2.0f;
     
-    // 判断扇区
     int sector = 0;
     if (Va > 0) sector += 1;
     if (Vb > 0) sector += 2;
@@ -142,10 +123,6 @@ void SVPWM_Generate(AlphaBeta_t *vab, SVPWM_t *svpwm, PWM_Output_t *pwm)
 }
 
 // FOC主更新函数
-// foc: FOC控制器
-// Ia, Ib, Ic: 三相电流采样值
-// theta_mech: 机械角度 (弧度)
-// Ts: 采样周期 (秒)
 void FOC_Update(FOC_t *foc, float Ia, float Ib, float Ic, float theta_mech, float Ts)
 {
     // 更新转子机械角度和电角度
@@ -163,9 +140,9 @@ void FOC_Update(FOC_t *foc, float Ia, float Ib, float Ic, float theta_mech, floa
     // foc->vdq.q = PID_q(foc->idq_ref.q - foc->idq.q);
     
     // 反Park变换
-    AlphaBeta_t vab;
-    Inverse_Park_Transform(&foc->vdq, foc->theta_e, &vab);
+    AlphaBeta_t v_ab;
+    Inverse_Park_Transform(&foc->vdq, foc->theta_e, &v_ab);
     
     // SVPWM生成
-    SVPWM_Generate(&vab, &foc->svpwm, &foc->pwm);
+    SVPWM_Generate(&v_ab, &foc->svpwm, &foc->pwm);
 }

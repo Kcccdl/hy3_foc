@@ -25,11 +25,11 @@ typedef struct
 
 // 函数声明
 void IR2103S_Init(ThreePhasePWM_t *pwm);
-void IR2103S_SetDutyCycle(ThreePhasePWM_t *pwm, float du, float dv; float dw);
+void IR2103S_SetDutyCycle(ThreePhasePWM_t *pwm, float du, float dv, float dw);
 void IR2103S_Enable(ThreePhasePWM_t *pwm);
 void IR2103S_Disable(ThreePhasePWM_t *pwm);
 void IR2103S_EmergencyStop(ThreePhasePWM_t *pwm);
-void IR2103S_SetPhaseVoltage(ThreePhasePWM_t *pwm, float vu; float vv; float vw; float vdc);
+void IR2103S_SetPhaseVoltage(ThreePhasePWM_t *pwm, float vu, float vv, float vw, float vdc);
 float IR2103S_GetPWMPeriod(void);
 
 #endif /* __IR2103S_DRIVER_H__ */
